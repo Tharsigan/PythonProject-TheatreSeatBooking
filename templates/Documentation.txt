@@ -1,0 +1,75 @@
+Movie Seat Booking System
+This is a webbased movie seat booking application built using Python(Flask), HTML, CSS, and Bootstrap. It allows users to:
+	•	Select a movie from a list of available options.
+	•	View and choose available seats.
+	•	Cancel selected seats if needed.
+	•	Confirm their booking with a summary page.
+
+Features
+	•	Movie selection with thumbnails - Here I included 6 movies and you can           click any movies and it’ll go to seat booking page.
+	•	Seat selection grid - Here you can select only unto 10 seats.
+                                 - You must select a seat otherwise it’ll not allow you to          proceed.
+	•	Booking confirmation - Here you will receive a QRcode and a unique booking Id along with the movie name and the seats you’ve booked.
+	•	Seat cancellation with confirmation prompt - If you click the booked seats in the booking page if will pop up a cancellation message and you can cancel your booked seats through it.
+	•	Dynamic seat status (available/booked) - Available seats shown in green color , booked seats shown in red color and the seats that you selected to book will show in orange color.
+
+Additional
+
+	•	Maximum 10 can be booked.
+	•	Booking not allowed without selecting at least one seat.
+
+
+
+This is a webbased movie seat booking application built using Python(Flask), HTML, CSS, and Bootstrap. It allows users to:
+	•	Select a movie from a list of available options.
+	•	View and choose available seats.
+	•	Cancel selected seats if needed.
+	•	Confirm their booking with a summary page.
+
+Features
+	•	Movie selection with thumbnails - Here I included 6 movies and you can           click any movies and it’ll go to seat booking page.
+	•	Seat selection grid - Here you can select only unto 10 seats.
+                                 - You must select a seat otherwise it’ll not allow you to          proceed.
+	•	Booking confirmation - Here you will receive a QRcode and a unique booking Id along with the movie name and the seats you’ve booked.
+	•	Seat cancellation with confirmation prompt - If you click the booked seats in the booking page if will pop up a cancellation message and you can cancel your booked seats through it.
+	•	Dynamic seat status (available/booked) - Available seats shown in green color , booked seats shown in red color and the seats that you selected to book will show in orange color.
+
+Additional
+
+	•	Maximum 10 can be booked.
+	•	Booking not allowed without selecting at least one seat.
+
+
+
+CRUD Functionalities
+
+	•	Create - Book a seat
+
+	•	Read - View movie & seat status
+
+	•	Update - Booking and cancellation update 
+
+	•	Delete - Cancel seat
+
+Reference
+
+	•	Used YouTube and Internet for HTML and CSS.
+
+
+
+CRUD Functionalities
+
+	•	Create - Book a seat
+
+	•	Read - View movie & seat status
+
+	•	Update - Booking and cancellation update 
+
+	•	Delete - Cancel seat
+
+Reference
+
+	•	Used YouTube and Internet for HTML and CSS.
+
+
+

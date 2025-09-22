@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seat Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .seat-btn {
+            min-width: 60px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .btn-selected {
+            background-color: orange !important;
+            border-color: orange !important;
+        }
+    </style>
+</head>
+<body class="bg-dark text-white">
+    <div class="container mt-5 text-center">
+        <h2 class="text-warning mb-4">All Eyes This Way Please</h2>
+
+        <form action="/book/{{ movie }}" method="POST" onsubmit="return checkSeats();">
+            <div class="d-flex justify-content-center flex-wrap">
+                {% for seat in seats %}
+                    <div class="form-check m-2">
+                        {% if seat in booked %}
+                            <span class="btn seat-btn btn-danger" onclick="confirmCancel('{{ seat }}')" title="Click to cancel">{{ seat }}</span>
+                        {% else %}
+                            <input class="btn-check" type="checkbox" id="{{ seat }}" name="seat" value="{{ seat }}" onchange="updateSelection(this)">
+                            <label class="btn seat-btn btn-success" for="{{ seat }}">{{ seat }}</label>
+                        {% endif %}
+                    </div>
+                    {% if loop.index % 6 == 0 %}<div class="w-100"></div>{% endif %}
+                {% endfor %}
+            </div>
+            <button type="submit" class="btn btn-primary mt-4">Proceed</button>
+        </form>
+    </div>
+
+    <script>
+        function updateSelection(checkbox) {
+            const selected = document.querySelectorAll('input[type="checkbox"]:checked');
+            if (selected.length > 10) {
+                alert("You can only select up to 10 seats.");
+                checkbox.checked = false;
+                return;
+            }
+            const label = document.querySelector('label[for="' + checkbox.id + '"]');
+            label.classList.toggle('btn-selected', checkbox.checked);
+            label.classList.toggle('btn-success', !checkbox.checked);
+        }
+
+        function checkSeats() {
+            const selected = document.querySelectorAll('input[type="checkbox"]:checked');
+            if (selected.length === 0) {
+                alert("Cannot proceed. No seat selected.");
+                return false;
+            }
+            return true;
+        }
+
+        function confirmCancel(seat) {
+            if (confirm(`Do you want to cancel the booking for seat ${seat}?`)) {
+                const form = document.createElement('form');
+                form.method = 'POST';
+                form.action = window.location.pathname;
+
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = 'cancel_seat';
+                input.value = seat;
+                form.appendChild(input);
+
+                document.body.appendChild(form);
+                form.submit();
+            }
+        }
+    </script>
+</body>
+</html>

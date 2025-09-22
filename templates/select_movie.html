@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Movie</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .movie-poster {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .movie-poster:hover {
+            transform: scale(1.05);
+        }
+        .movie-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body class="text-center p-4 bg-dark text-white">
+    <h2 class="text-warning mb-4">Select a Movie</h2>
+    <div class="movie-container">
+        <a href="{{ url_for('book', movie='Kung Fu Panda') }}">
+            <img src="{{ url_for('static', filename='movie1.jpg') }}" alt="Kung Fu Panda" class="movie-poster">
+        </a>
+        <a href="{{ url_for('book', movie='How To Train Your Dragon') }}">
+            <img src="{{ url_for('static', filename='movie2.jpg') }}" alt="How To Train Your Dragon" class="movie-poster">
+        </a>
+        <a href="{{ url_for('book', movie='Angry Birds') }}">
+            <img src="{{ url_for('static', filename='movie3.jpg') }}" alt="Angry Birds" class="movie-poster">
+        </a>
+        <a href="{{ url_for('book', movie='Ben 10') }}">
+            <img src="{{ url_for('static', filename='movie4.jpg') }}" alt="Ben 10" class="movie-poster">
+        </a>
+        <a href="{{ url_for('book', movie='Spider-Man') }}">
+            <img src="{{ url_for('static', filename='movie5.jpg') }}" alt="Spider-Man" class="movie-poster">
+        </a>
+        <a href="{{ url_for('book', movie='Naruto') }}">
+            <img src="{{ url_for('static', filename='movie6.jpg') }}" alt="Naruto" class="movie-poster">
+    </div>
+</body>
+</html>
